@@ -1,8 +1,8 @@
 const listsRouter = require("express").Router();
-const User = require("../models/list");
+const List = require("../models/list");
 
 listsRouter.get("/", async (req, res) => {
-	const allLists = await User.find({});
+	const allLists = await List.find({});
 	res.json(allLists.map(list => list.toJSON()));
 });
 
@@ -10,7 +10,7 @@ listsRouter.post("/", async (req, res, next) => {
 	const { body } = req;
 
 	try {
-		const newList = new Blog({
+		const newList = new List({
 			content: body.content,
 		});
 
