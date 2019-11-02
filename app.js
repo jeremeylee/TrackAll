@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const listsRouter = require("./controllers/lists");
+const categoriesRouter = require("./controllers/categories");
 const config = require("./utils/config");
 
 const app = express();
@@ -22,4 +23,5 @@ mongoose
 
 app.use(bodyParser.json());
 app.use("/api/lists", listsRouter);
+app.use("/api/categories", categoriesRouter);
 module.exports = app;
