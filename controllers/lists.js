@@ -7,7 +7,7 @@ listsRouter.get("/", async (req, res) => {
 });
 
 listsRouter.post("/", async (req, res, next) => {
-	const { body } = request;
+	const { body } = req;
 
 	try {
 		const newList = new Blog({
