@@ -23,12 +23,17 @@ listsRouter.post("/", async (req, res, next) => {
 
 listsRouter.delete("/:id", async (req, res, next) => {
 	const { body } = req;
-	await List.findByIdAndDelete(body.id);
-	res.status(204).end();
+	try {
+		await List.findByIdAndDelete(body.id);
+		res.status(204).end();
+	} catch (exception) {
+		next(exception);
+	}
 });
 
 listsRouter.put("/:id", async (req, res, next) => {
 	const { body } = req;
+	console.log(body);
 	try {
 		const updatedList = await List.findByIdAndUpdate(
 			body.id,
