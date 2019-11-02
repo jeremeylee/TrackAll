@@ -6,7 +6,7 @@ listsRouter.get("/", async (req, res) => {
 	res.json(allLists.map(list => list.toJSON()));
 });
 
-listsRotuer.post("/", async (req, res, next) => {
+listsRouter.post("/", async (req, res, next) => {
 	const { body } = request;
 
 	try {
