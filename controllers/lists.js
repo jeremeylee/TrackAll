@@ -22,9 +22,8 @@ listsRouter.post("/", async (req, res, next) => {
 });
 
 listsRouter.delete("/:id", async (req, res, next) => {
-	const { body } = req;
 	try {
-		await List.findByIdAndDelete(body.id);
+		await List.findByIdAndDelete(req.params.id);
 		res.status(204).end();
 	} catch (exception) {
 		next(exception);
