@@ -5,5 +5,5 @@ const listsRouter = require('./controllers/lists');
 const app = express();
 
 app.use(bodyParser.json());
-app.use('/', listsRouter);
+app.use('/api/lists', listsRouter);
 module.exports = app;
