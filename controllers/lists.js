@@ -33,10 +33,10 @@ listsRouter.delete("/:id", async (req, res, next) => {
 
 listsRouter.put("/:id", async (req, res, next) => {
 	const { body } = req;
-	console.log(body);
+
 	try {
 		const updatedList = await List.findByIdAndUpdate(
-			body.id,
+			req.params.id,
 			{
 				content: body.content,
 			},
