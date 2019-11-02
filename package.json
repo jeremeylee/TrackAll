@@ -1,0 +1,19 @@
+{
+  "name": "track-all",
+  "version": "1.0.0",
+  "description": "A general purpose tracker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeremeylee/TrackAll.git"
+  },
+  "author": "Jeremey Lee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeremeylee/TrackAll/issues"
+  },
+  "homepage": "https://github.com/jeremeylee/TrackAll#readme"
+}
