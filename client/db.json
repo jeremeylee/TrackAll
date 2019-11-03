@@ -1,13 +1,45 @@
 {
 	"categories": [
 		{
-			"lists": ["5dbe24e7d6bd870cb00aaa70"],
+			"lists": [
+				{
+					"category": "5dbe16fe9932600cc41a8a82",
+					"id": "5dbe24e7d6bd870cb00aaa70",
+					"content": "new content list"
+				},
+				{
+					"category": "5dbe16fe9932600cc41a8a82",
+					"id": "5dbe24e7d6bd870cb00aaa72",
+					"content": "third list"
+				},
+				{
+					"category": "5dbe16fe9932600cc41a8a82",
+					"id": "5dbe24e7d6bd870cb00aaa74",
+					"content": "fifth list"
+				}
+			],
 			"id": "5dbe16fe9932600cc41a8a82",
 			"title": "first category"
 		},
 
 		{
-			"lists": [],
+			"lists": [
+				{
+					"category": "5dbe24c8d6bd870cb00aaa6f",
+					"id": "5dbe24e7d6bd870cb00aaa71",
+					"content": "second list"
+				},
+				{
+					"category": "5dbe24c8d6bd870cb00aaa6f",
+					"id": "5dbe24e7d6bd870cb00aaa73",
+					"content": "fourth list"
+				},
+				{
+					"category": "5dbe24c8d6bd870cb00aaa6f",
+					"id": "5dbe24e7d6bd870cb00aaa75",
+					"content": "sixth list"
+				}
+			],
 			"id": "5dbe24c8d6bd870cb00aaa6f",
 			"title": "second category"
 		}
@@ -23,6 +55,26 @@
 			"category": "5dbe24c8d6bd870cb00aaa6f",
 			"id": "5dbe24e7d6bd870cb00aaa71",
 			"content": "second list"
+		},
+		{
+			"category": "5dbe16fe9932600cc41a8a82",
+			"id": "5dbe24e7d6bd870cb00aaa72",
+			"content": "third list"
+		},
+		{
+			"category": "5dbe24c8d6bd870cb00aaa6f",
+			"id": "5dbe24e7d6bd870cb00aaa73",
+			"content": "fourth list"
+		},
+		{
+			"category": "5dbe16fe9932600cc41a8a82",
+			"id": "5dbe24e7d6bd870cb00aaa74",
+			"content": "fifth list"
+		},
+		{
+			"category": "5dbe24c8d6bd870cb00aaa6f",
+			"id": "5dbe24e7d6bd870cb00aaa75",
+			"content": "sixth list"
 		}
 	]
 }
