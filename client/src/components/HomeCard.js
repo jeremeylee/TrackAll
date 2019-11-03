@@ -21,6 +21,10 @@ const useStyles = makeStyles({
 	cardContent: {
 		flexGrow: "1",
 	},
+
+	cardActions: {
+		paddingLeft: "16px",
+	},
 });
 
 const HomeCard = props => {
@@ -39,7 +43,7 @@ const HomeCard = props => {
 					))}
 				</List>
 			</CardContent>
-			<CardActions>
+			<CardActions className={classes.cardActions}>
 				<Button size="small">View More</Button>
 			</CardActions>
 		</Card>
