@@ -1,0 +1,28 @@
+{
+	"categories": [
+		{
+			"lists": ["5dbe24e7d6bd870cb00aaa70"],
+			"id": "5dbe16fe9932600cc41a8a82",
+			"title": "first category"
+		},
+
+		{
+			"lists": [],
+			"id": "5dbe24c8d6bd870cb00aaa6f",
+			"title": "second category"
+		}
+	],
+
+	"lists": [
+		{
+			"category": "5dbe16fe9932600cc41a8a82",
+			"id": "5dbe24e7d6bd870cb00aaa70",
+			"content": "new content list"
+		},
+		{
+			"category": "5dbe24c8d6bd870cb00aaa6f",
+			"id": "5dbe24e7d6bd870cb00aaa71",
+			"content": "second list"
+		}
+	]
+}
