@@ -4,7 +4,8 @@ import {
 	BottomNavigationAction,
 	useMediaQuery,
 } from "@material-ui/core";
-import { HomeIcon, LibraryBooksIcon } from "@material-ui/icons";
+import HomeIcon from "@material-ui/icons/Home";
+import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
 
 const BottomNav = props => {
 	const matches = useMediaQuery("(min-width:1024px)");
