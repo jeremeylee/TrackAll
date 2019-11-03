@@ -17,7 +17,7 @@ const Home = props => {
 	return (
 		<div>
 			{categories.map(category => (
-				<HomeCard title={category.title} list={category.lists} />
+				<HomeCard title={category.title} lists={category.lists} />
 			))}
 		</div>
 	);
