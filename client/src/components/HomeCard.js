@@ -37,7 +37,7 @@ const HomeCard = props => {
 				<Typography variant="h5">{props.title}</Typography>
 				<List>
 					{truncatedList.map(list => (
-						<ListItem divider={true}>
+						<ListItem key={list.id} divider={true}>
 							<ListItemText primary={list.content} />
 						</ListItem>
 					))}

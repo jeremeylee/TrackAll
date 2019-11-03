@@ -17,7 +17,11 @@ const Home = props => {
 	return (
 		<div>
 			{categories.map(category => (
-				<HomeCard title={category.title} lists={category.lists} />
+				<HomeCard
+					key={category.id}
+					title={category.title}
+					lists={category.lists}
+				/>
 			))}
 		</div>
 	);
