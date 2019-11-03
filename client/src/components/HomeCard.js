@@ -25,14 +25,15 @@ const useStyles = makeStyles({
 
 const HomeCard = props => {
 	const classes = useStyles();
-	console.log(props.lists);
+	const truncatedList = props.lists.slice(0, 3);
+	console.log(truncatedList);
 	return (
 		<Card className={classes.card}>
 			<CardContent className={classes.cardContent}>
 				<Typography variant="h5">{props.title}</Typography>
 				<List>
-					{props.lists.map(list => (
-						<ListItem divider="true">
+					{truncatedList.map(list => (
+						<ListItem divider={true}>
 							<ListItemText primary={list.content} />
 						</ListItem>
 					))}
