@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 const listsRouter = require("express").Router();
 const List = require("../models/list");
 const Category = require("../models/category");
