@@ -13,11 +13,18 @@ const Home = props => {
 			setLists(initialLists);
 		});
 	}, []);
-	console.log(categories);
-	console.log(lists);
+	const test = () => {
+		console.log("init");
+		categories.map(category =>
+			lists.map(list => (category.lists.includes(list.id) ? list : ""))
+		);
+	};
 	return (
 		<div>
-			<HomeCard />
+			{test()}
+			{categories.map(category => (
+				<HomeCard title={category.title} list={category.lists} />
+			))}
 		</div>
 	);
 };
