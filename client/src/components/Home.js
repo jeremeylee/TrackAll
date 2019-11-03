@@ -13,15 +13,9 @@ const Home = props => {
 			setLists(initialLists);
 		});
 	}, []);
-	const test = () => {
-		console.log("init");
-		categories.map(category =>
-			lists.map(list => (category.lists.includes(list.id) ? list : ""))
-		);
-	};
+
 	return (
 		<div>
-			{test()}
 			{categories.map(category => (
 				<HomeCard title={category.title} list={category.lists} />
 			))}
