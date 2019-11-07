@@ -16,7 +16,7 @@ const useStyles = makeStyles({
 		display: "flex",
 		flexDirection: "column",
 		minHeight: "30vh",
-		margin: "0 1em 1em 1em",
+		margin: "1em 1em 1em 1em",
 	},
 	cardContent: {
 		flexGrow: "1",
