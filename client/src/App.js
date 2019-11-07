@@ -1,7 +1,5 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import Navigation from "./components/Navigation";
-import BottomNav from "./components/BottomNav";
 import Home from "./components/Home";
 
 const App = () => {
