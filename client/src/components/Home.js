@@ -7,7 +7,6 @@ import BottomNav from "./BottomNav";
 
 const Home = props => {
 	const [categories, setCategories] = useState([]);
-	const classes = useStyles();
 
 	useEffect(() => {
 		//Get all the categories in the db
