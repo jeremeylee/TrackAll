@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Grid, Typography, BottomNavigationAction } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 import categoryService from "../services/categories";
 import HomeCard from "./HomeCard";
 import Navigation from "./Navigation";
 import BottomNav from "./BottomNav";
+
 const Home = props => {
 	const [categories, setCategories] = useState([]);
+	const classes = useStyles();
 
 	useEffect(() => {
 		//Get all the categories in the db
@@ -19,7 +21,7 @@ const Home = props => {
 			<Navigation
 				toolBarContent={<Typography variant="h6">Track All</Typography>}
 			/>
-			<Grid container spacing={2}>
+			<Grid container spacing={0}>
 				{categories.map(category => (
 					<Grid item xs={12} sm={6} lg={3}>
 						<HomeCard
