@@ -13,7 +13,7 @@ const Category = props => {
 						<Link to="/">
 							<ArrowBackIosIcon />
 						</Link>
-						<Typography>Category</Typography>
+						<Typography variant="h6">{props.title}</Typography>
 					</Grid>
 				}
 			/>

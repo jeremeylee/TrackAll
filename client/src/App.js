@@ -18,7 +18,7 @@ const App = () => {
 			<Switch>
 				{categories.map(category => (
 					<Route key={category.id} path={`/${category.title}`}>
-						<Category />
+						<Category title={category.title} />
 					</Route>
 				))}
 
