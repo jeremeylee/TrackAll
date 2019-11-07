@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Grid, Typography } from "@material-ui/core";
+import { Grid, Typography, BottomNavigationAction } from "@material-ui/core";
 import categoryService from "../services/categories";
 import HomeCard from "./HomeCard";
 import Navigation from "./Navigation";
-
+import BottomNav from "./BottomNav";
 const Home = props => {
 	const [categories, setCategories] = useState([]);
 
@@ -30,6 +30,7 @@ const Home = props => {
 					</Grid>
 				))}
 			</Grid>
+			<BottomNav />
 		</div>
 	);
 };
