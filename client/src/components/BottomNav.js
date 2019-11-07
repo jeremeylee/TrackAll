@@ -5,8 +5,6 @@ import {
 	useMediaQuery,
 	makeStyles,
 } from "@material-ui/core";
-import HomeIcon from "@material-ui/icons/Home";
-import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
 
 const useStyles = makeStyles({
 	sticky: {
