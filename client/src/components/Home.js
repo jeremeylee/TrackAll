@@ -4,6 +4,7 @@ import categoryService from "../services/categories";
 import HomeCard from "./HomeCard";
 import Navigation from "./Navigation";
 import BottomNav from "./BottomNav";
+import AddIcon from "@material-ui/icons/Add";
 
 const Home = props => {
 	const [categories, setCategories] = useState([]);
@@ -27,7 +28,7 @@ const Home = props => {
 					</Grid>
 				))}
 			</Grid>
-			<BottomNav />
+			<BottomNav label="New Category" icon={<AddIcon />} />
 		</div>
 	);
 };
