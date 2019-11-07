@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Navigation from "./Navigation";
+import AddDialog from "./AddDialog";
 import ListContent from "./ListContent";
 import BottomNav from "./BottomNav";
 import { Typography, Grid } from "@material-ui/core";
@@ -25,6 +26,14 @@ const Category = props => {
 						<Typography variant="h6">{props.title}</Typography>
 					</Grid>
 				}
+			/>
+
+			<AddDialog
+				open={open}
+				setOpen={setOpen}
+				title={"New Item"}
+				label={"Add a new item"}
+				type={"listItem"}
 			/>
 			<ListContent lists={props.lists} />
 			<BottomNav

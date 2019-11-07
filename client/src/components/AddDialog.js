@@ -14,7 +14,7 @@ const AddDialog = props => {
 	};
 
 	return (
-		<Dialog open={open} onClose={handleClose}>
+		<Dialog open={props.open} onClose={handleClose}>
 			<DialogTitle>{props.title}</DialogTitle>
 			<DialogContent>
 				<TextField
