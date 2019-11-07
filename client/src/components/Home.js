@@ -22,12 +22,8 @@ const Home = props => {
 			/>
 			<Grid container spacing={0}>
 				{categories.map(category => (
-					<Grid item xs={12} sm={6} lg={3}>
-						<HomeCard
-							key={category.id}
-							title={category.title}
-							lists={category.lists}
-						/>
+					<Grid item xs={12} sm={6} lg={3} key={category.id}>
+						<HomeCard title={category.title} lists={category.lists} />
 					</Grid>
 				))}
 			</Grid>
