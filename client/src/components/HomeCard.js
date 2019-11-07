@@ -46,7 +46,7 @@ const HomeCard = props => {
 			</CardContent>
 			<CardActions className={classes.cardActions}>
 				<Button size="small">
-					<Link to="/category">View More</Link>
+					<Link to={`/${props.title}`}>View More</Link>
 				</Button>
 			</CardActions>
 		</Card>

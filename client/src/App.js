@@ -16,8 +16,13 @@ const App = () => {
 	return (
 		<div>
 			<Switch>
+				{categories.map(category => (
+					<Route key={category.id} path={`/${category.title}`}>
+						<Category />
+					</Route>
+				))}
+
 				<Route path="/">
-					{/* <Category /> */}
 					<Home categories={categories} />
 				</Route>
 			</Switch>
