@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
 	Card,
 	CardActions,
@@ -44,7 +45,9 @@ const HomeCard = props => {
 				</List>
 			</CardContent>
 			<CardActions className={classes.cardActions}>
-				<Button size="small">View More</Button>
+				<Button size="small">
+					<Link to="/category">View More</Link>
+				</Button>
 			</CardActions>
 		</Card>
 	);
