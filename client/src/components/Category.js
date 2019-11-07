@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Navigation from "./Navigation";
 import ListContent from "./ListContent";
+import BottomNav from "./BottomNav";
 import { Typography, Grid } from "@material-ui/core";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+import AddIcon from "@material-ui/icons/Add";
 
 const Category = props => {
+	const [open, setOpen] = useState(false);
+
+	const handleOpen = () => {
+		setOpen(true);
+	};
+
 	return (
 		<div>
 			<Navigation
@@ -19,6 +27,11 @@ const Category = props => {
 				}
 			/>
 			<ListContent lists={props.lists} />
+			<BottomNav
+				handleClick={handleOpen}
+				label={"New Item"}
+				icon={<AddIcon />}
+			/>
 		</div>
 	);
 };

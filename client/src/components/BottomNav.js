@@ -29,7 +29,11 @@ const BottomNav = props => {
 			}}
 			className={classes.sticky}
 		>
-			<BottomNavigationAction label={props.label} icon={props.icon} />
+			<BottomNavigationAction
+				onClick={props.handleClick}
+				label={props.label}
+				icon={props.icon}
+			/>
 		</BottomNavigation>
 	);
 };
