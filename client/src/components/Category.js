@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Navigation from "./Navigation";
+import ListContent from "./ListContent";
 import { Typography, Grid } from "@material-ui/core";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 
@@ -17,6 +18,7 @@ const Category = props => {
 					</Grid>
 				}
 			/>
+			<ListContent lists={props.lists} />
 		</div>
 	);
 };
