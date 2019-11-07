@@ -31,8 +31,7 @@ const BottomNav = props => {
 			}}
 			className={classes.sticky}
 		>
-			<BottomNavigationAction label="Home" icon={<HomeIcon />} />
-			<BottomNavigationAction label="All" icon={<LibraryBooksIcon />} />
+			<BottomNavigationAction label={props.label} icon={props.icon} />
 		</BottomNavigation>
 	);
 };
