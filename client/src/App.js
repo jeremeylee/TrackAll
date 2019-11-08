@@ -27,6 +27,7 @@ const App = () => {
 						<Category
 							setCategories={setCategories}
 							categories={categories}
+							category={category}
 							title={category.title}
 							lists={category.lists}
 							id={category.id}
