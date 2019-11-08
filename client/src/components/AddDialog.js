@@ -22,6 +22,8 @@ const AddDialog = props => {
 						autoFocus
 						margihn="dense"
 						id="name"
+						value={props.value}
+						onChange={props.handleValueChange}
 						label={props.label}
 						type={props.type}
 						fullWidth

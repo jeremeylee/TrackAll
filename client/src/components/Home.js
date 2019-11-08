@@ -8,13 +8,20 @@ import AddIcon from "@material-ui/icons/Add";
 
 const Home = props => {
 	const [open, setOpen] = useState(false);
-
+	const [value, setValue] = useState("");
 	const handleOpen = () => {
 		setOpen(true);
 	};
 
+	const handleValueChange = event => {
+		setValue(event.target.value);
+	};
+
 	const handleAdd = event => {
-		console.log(event);
+		event.preventDefault();
+		console.log(props.categories);
+		setValue("");
+		setOpen(false);
 	};
 	return (
 		<div>
@@ -33,6 +40,8 @@ const Home = props => {
 				open={open}
 				setOpen={setOpen}
 				handleAdd={handleAdd}
+				value={value}
+				handleValueChange={handleValueChange}
 				title={"New Category"}
 				label={"Enter a title"}
 				type={"category"}
