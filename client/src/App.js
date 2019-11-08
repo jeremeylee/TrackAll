@@ -23,6 +23,7 @@ const App = () => {
 							categories={categories}
 							title={category.title}
 							lists={category.lists}
+							id={category.id}
 						/>
 					</Route>
 				))}
