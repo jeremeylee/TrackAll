@@ -32,6 +32,18 @@ const Home = props => {
 	const handleAdd = event => {
 		event.preventDefault();
 		console.log(props.categories);
+
+		// Add new category to category array
+		const newCategory = [
+			...props.categories,
+			{
+				id: randomID(),
+				lists: [],
+				title: value,
+			},
+		];
+
+		console.log(newCategory);
 		setValue("");
 		setOpen(false);
 	};
