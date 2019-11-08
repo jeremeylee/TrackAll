@@ -41,10 +41,11 @@ const Home = props => {
 			title: value,
 		};
 
+		// Send new category as obj for POST request
 		categoryService.addCategory(newCategory);
 
+		// Update the existing array of categories
 		const updatedCategory = [...props.categories, newCategory];
-		console.log(updatedCategory);
 		props.setCategories(updatedCategory);
 		setValue("");
 		setOpen(false);
