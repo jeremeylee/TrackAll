@@ -28,9 +28,6 @@ const App = () => {
 							setCategories={setCategories}
 							categories={categories}
 							category={category}
-							title={category.title}
-							lists={category.lists}
-							id={category.id}
 							setLists={setLists}
 							allLists={lists}
 						/>

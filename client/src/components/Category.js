@@ -38,7 +38,7 @@ const Category = props => {
 
 		// Create new item object
 		const newItem = {
-			category: props.id,
+			category: props.category.id,
 			id: randomID(),
 			content: value,
 		};
@@ -62,7 +62,7 @@ const Category = props => {
 						<Link to="/">
 							<ArrowBackIosIcon />
 						</Link>
-						<Typography variant="h6">{props.title}</Typography>
+						<Typography variant="h6">{props.category.title}</Typography>
 					</Grid>
 				}
 			/>
@@ -77,7 +77,7 @@ const Category = props => {
 				label={"Add a new item"}
 				type={"listItem"}
 			/>
-			<ListContent lists={props.lists} />
+			<ListContent lists={props.category.lists} />
 			<BottomNav
 				handleClick={handleOpen}
 				label={"New Item"}
