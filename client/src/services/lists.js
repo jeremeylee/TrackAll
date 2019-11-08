@@ -6,6 +6,12 @@ const getLists = () => {
 	return request.then(response => response.data);
 };
 
+const addItem = async newItem => {
+	const request = await axios.post(`${baseUrl}/lists`);
+	return request;
+};
+
 export default {
 	getLists,
+	addItem,
 };
