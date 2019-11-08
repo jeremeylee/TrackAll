@@ -7,7 +7,7 @@ const getCategories = () => {
 };
 
 const addCategory = async newCategory => {
-	const request = await axios.post("/categories", newCategory);
+	const request = await axios.post(`${baseUrl}/categories`, newCategory);
 	return request;
 };
 
