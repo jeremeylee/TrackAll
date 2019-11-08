@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { Grid, Typography } from "@material-ui/core";
 import HomeCard from "./HomeCard";
 import Navigation from "./Navigation";
+import AddDialog from "./AddDialog";
 import BottomNav from "./BottomNav";
 import AddIcon from "@material-ui/icons/Add";
 
 const Home = props => {
+	const [open, setOpen] = useState(false);
+
+	const handleOpen = () => {
+		setOpen(true);
+	};
 	return (
 		<div>
 			<Navigation
@@ -18,7 +24,20 @@ const Home = props => {
 					</Grid>
 				))}
 			</Grid>
-			<BottomNav label="New Category" icon={<AddIcon />} />
+
+			<AddDialog
+				open={open}
+				setOpen={setOpen}
+				title={"New Category"}
+				label={"Enter a title"}
+				type={"category"}
+			/>
+
+			<BottomNav
+				handleClick={handleOpen}
+				label="New Category"
+				icon={<AddIcon />}
+			/>
 		</div>
 	);
 };
