@@ -30,6 +30,7 @@ const App = () => {
 							title={category.title}
 							lists={category.lists}
 							id={category.id}
+							allLists={lists}
 						/>
 					</Route>
 				))}
