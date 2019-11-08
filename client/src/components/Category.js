@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import listService from "../services/lists";
 import Navigation from "./Navigation";
 import AddDialog from "./AddDialog";
 import ListContent from "./ListContent";
@@ -41,15 +42,15 @@ const Category = props => {
 			id: randomID(),
 			content: value,
 		};
+		listService.addItem(newItem);
 
 		// Update current list of items with new item
 		const updatedList = [...props.allLists, newItem];
-		console.log(updatedList);
 		props.setLists(updatedList);
 
 		// Update the category's list array
 		props.category.lists = props.category.lists.concat(newItem);
-		console.log(props.categories);
+
 		setValue("");
 		setOpen(false);
 	};
