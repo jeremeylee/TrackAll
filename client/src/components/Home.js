@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import categoryService from "../services/categories";
 import { Grid, Typography } from "@material-ui/core";
 import HomeCard from "./HomeCard";
 import Navigation from "./Navigation";
@@ -43,6 +44,7 @@ const Home = props => {
 			},
 		];
 
+		categoryService.addCategory(newCategory);
 		console.log(newCategory);
 		setValue("");
 		setOpen(false);
