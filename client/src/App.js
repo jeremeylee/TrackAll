@@ -23,7 +23,7 @@ const App = () => {
 				))}
 
 				<Route path="/">
-					<Home categories={categories} />
+					<Home setCategories={setCategories} categories={categories} />
 				</Route>
 			</Switch>
 		</div>

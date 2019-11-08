@@ -42,7 +42,10 @@ const Home = props => {
 		};
 
 		categoryService.addCategory(newCategory);
-		console.log(newCategory);
+
+		const updatedCategory = [...props.categories, newCategory];
+		console.log(updatedCategory);
+		props.setCategories(updatedCategory);
 		setValue("");
 		setOpen(false);
 	};
