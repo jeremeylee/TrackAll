@@ -14,7 +14,7 @@ const useStyles = makeStyles({
 	card: {
 		display: "flex",
 		flexDirection: "column",
-		minHeight: "30vh",
+		minHeight: "31vh",
 		margin: "1em 1em 1em 1em",
 	},
 	cardContent: {
