@@ -6,6 +6,17 @@ import AddDialog from "./AddDialog";
 import BottomNav from "./BottomNav";
 import AddIcon from "@material-ui/icons/Add";
 
+const randomID = () => {
+	return (
+		Math.random()
+			.toString(36)
+			.substring(2, 15) +
+		Math.random()
+			.toString(36)
+			.substring(2, 15)
+	);
+};
+
 const Home = props => {
 	const [open, setOpen] = useState(false);
 	const [value, setValue] = useState("");
