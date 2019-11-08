@@ -15,10 +15,12 @@ const useStyles = makeStyles({
 		display: "flex",
 		flexDirection: "column",
 		minHeight: "31vh",
+		maxHeight: "31vh",
 		margin: "1em 1em 1em 1em",
 	},
 	cardContent: {
 		flexGrow: "1",
+		overflow: "hidden",
 	},
 
 	cardActions: {
@@ -37,7 +39,7 @@ const HomeCard = props => {
 		<Card className={classes.card}>
 			<CardContent className={classes.cardContent}>
 				<Typography variant="h5">{props.title}</Typography>
-				<ListContent lists={truncatedList} />
+				<ListContent lists={props.lists} />
 			</CardContent>
 			<CardActions className={classes.cardActions}>
 				<Button size="small">
