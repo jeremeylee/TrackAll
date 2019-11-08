@@ -35,14 +35,11 @@ const Home = props => {
 		console.log(props.categories);
 
 		// Add new category to category array
-		const newCategory = [
-			...props.categories,
-			{
-				id: randomID(),
-				lists: [],
-				title: value,
-			},
-		];
+		const newCategory = {
+			id: randomID(),
+			lists: [],
+			title: value,
+		};
 
 		categoryService.addCategory(newCategory);
 		console.log(newCategory);
