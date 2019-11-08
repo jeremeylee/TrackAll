@@ -30,10 +30,6 @@ const useStyles = makeStyles({
 
 const HomeCard = props => {
 	const classes = useStyles();
-	let truncatedList = props.lists;
-	if (truncatedList !== undefined && props.lists.length > 3) {
-		truncatedList = props.lists.slice(0, 3);
-	}
 
 	return (
 		<Card className={classes.card}>
