@@ -12,6 +12,10 @@ const Home = props => {
 	const handleOpen = () => {
 		setOpen(true);
 	};
+
+	const handleAdd = event => {
+		console.log(event);
+	};
 	return (
 		<div>
 			<Navigation
@@ -28,6 +32,7 @@ const Home = props => {
 			<AddDialog
 				open={open}
 				setOpen={setOpen}
+				handleAdd={handleAdd}
 				title={"New Category"}
 				label={"Enter a title"}
 				type={"category"}

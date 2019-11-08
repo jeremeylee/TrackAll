@@ -29,7 +29,7 @@ const AddDialog = props => {
 					<Button onClick={handleClose} color="primary">
 						Cancel
 					</Button>
-					<Button onClick={handleClose} color="primary">
+					<Button onClick={props.handleAdd} color="primary">
 						Add
 					</Button>
 				</DialogActions>
