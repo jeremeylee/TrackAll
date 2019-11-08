@@ -7,7 +7,7 @@ const getLists = () => {
 };
 
 const addItem = async newItem => {
-	const request = await axios.post(`${baseUrl}/lists`);
+	const request = await axios.post(`${baseUrl}/lists`, newItem);
 	return request;
 };
 
