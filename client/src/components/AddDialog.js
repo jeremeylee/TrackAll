@@ -16,24 +16,26 @@ const AddDialog = props => {
 	return (
 		<Dialog open={props.open} onClose={handleClose}>
 			<DialogTitle>{props.title}</DialogTitle>
-			<DialogContent>
-				<TextField
-					autoFocus
-					margihn="dense"
-					id="name"
-					label={props.label}
-					type={props.type}
-					fullWidth
-				/>
-				<DialogActions>
-					<Button onClick={handleClose} color="primary">
-						Cancel
-					</Button>
-					<Button onClick={props.handleAdd} color="primary">
-						Add
-					</Button>
-				</DialogActions>
-			</DialogContent>
+			<form autoComplete="off" onSubmit={props.handleAdd}>
+				<DialogContent>
+					<TextField
+						autoFocus
+						margihn="dense"
+						id="name"
+						label={props.label}
+						type={props.type}
+						fullWidth
+					/>
+					<DialogActions>
+						<Button onClick={handleClose} color="primary">
+							Cancel
+						</Button>
+						<Button color="primary" type="submit">
+							Add
+						</Button>
+					</DialogActions>
+				</DialogContent>
+			</form>
 		</Dialog>
 	);
 };
