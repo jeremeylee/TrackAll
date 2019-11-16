@@ -84,7 +84,7 @@ const HomeCard = props => {
 						<MoreHorizIcon />
 					</Button>
 				</div>
-				<Dialog onClose={handleClose} open={open}>
+				<Dialog onClose={handleClose} open={open} fullWidth>
 					<List>
 						{settings.map(setting => (
 							<ListItem
