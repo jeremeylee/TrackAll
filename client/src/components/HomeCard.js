@@ -95,7 +95,7 @@ const HomeCard = props => {
 			category.id === props.category.id ? updatedCategory : category
 		);
 
-		console.log(updatedCategories);
+		props.setCategories(updatedCategories);
 		setEditValue("");
 		setOpenEdit(false);
 	};
