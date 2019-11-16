@@ -14,7 +14,7 @@ const AddDialog = props => {
 	};
 
 	return (
-		<Dialog open={props.open} onClose={handleClose}>
+		<Dialog open={props.open} onClose={handleClose} fullWidth>
 			<DialogTitle>{props.title}</DialogTitle>
 			<form autoComplete="off" onSubmit={props.handleAdd}>
 				<DialogContent>
