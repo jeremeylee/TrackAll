@@ -72,6 +72,7 @@ const HomeCard = props => {
 	};
 
 	const handleEditMenuOpen = () => {
+		// Close the current dialog menu and open the edit dialog menu
 		setOpenMain(false);
 		setOpenEdit(true);
 	};
@@ -87,11 +88,13 @@ const HomeCard = props => {
 	const handleEdit = event => {
 		event.preventDefault();
 
+		// Update the title of the current list
 		const updatedCategory = {
 			...props.category,
 			title: editValue,
 		};
 
+		// Repopulate the categories list but use the updatedCategory for the category in the list that has the same id
 		const updatedCategories = props.categories.map(category =>
 			category.id === props.category.id ? updatedCategory : category
 		);
