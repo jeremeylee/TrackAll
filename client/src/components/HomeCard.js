@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import categoryService from "../services/categories";
 import ListContent from "./ListContent";
 import {
 	Card,
@@ -96,6 +97,7 @@ const HomeCard = props => {
 		);
 
 		props.setCategories(updatedCategories);
+		categoryService.updateCategory(updatedCategory, props.category.id);
 		setEditValue("");
 		setOpenEdit(false);
 	};
