@@ -106,7 +106,11 @@ const HomeCard = props => {
 	};
 
 	const handleDelete = () => {
-		console.log("delete");
+		const updatedCategories = props.categories.filter(
+			category => category.id !== props.category.id
+		);
+
+		props.setCategories(updatedCategories);
 		setOpenMain(false);
 	};
 
