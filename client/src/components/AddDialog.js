@@ -20,7 +20,7 @@ const AddDialog = props => {
 				<DialogContent>
 					<TextField
 						autoFocus
-						margihn="dense"
+						margin="dense"
 						id="name"
 						value={props.value}
 						onChange={props.handleValueChange}
