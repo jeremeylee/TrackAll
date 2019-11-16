@@ -10,7 +10,9 @@ import {
 	Button,
 	Dialog,
 	DialogContent,
+	DialogContentText,
 	DialogActions,
+	DialogTitle,
 	TextField,
 	List,
 	ListItem,
@@ -45,6 +47,8 @@ const useStyles = makeStyles({
 const HomeCard = props => {
 	const [openMain, setOpenMain] = useState(false);
 	const [openEdit, setOpenEdit] = useState(false);
+	const [openWarning, setOpenWarning] = useState(false);
+	const [deleteCategory, setDeleteCategory] = useState(false);
 	const [editValue, setEditValue] = useState("");
 	const classes = useStyles();
 	const settings = ["Edit Title", "Delete"];
@@ -63,7 +67,7 @@ const HomeCard = props => {
 				handleEditMenuOpen();
 				break;
 			case "Delete":
-				handleDelete();
+				setOpenWarning(true);
 				break;
 			default:
 				setOpenMain(false);
@@ -105,13 +109,21 @@ const HomeCard = props => {
 		setOpenEdit(false);
 	};
 
-	const handleDelete = () => {
-		const updatedCategories = props.categories.filter(
-			category => category.id !== props.category.id
-		);
-
-		props.setCategories(updatedCategories);
+	const handleWarning = () => {
+		setOpenWarning(false);
+		handleDelete(true);
 		setOpenMain(false);
+	};
+
+	const handleDelete = confirm => {
+		if (confirm) {
+			const updatedCategories = props.categories.filter(
+				category => category.id !== props.category.id
+			);
+
+			props.setCategories(updatedCategories);
+			categoryService.deleteCategory(props.category.id);
+		}
 	};
 
 	return (
@@ -162,6 +174,29 @@ const HomeCard = props => {
 					</form>
 				</Dialog>
 
+				<Dialog
+					onClose={() => setOpenWarning(false)}
+					open={openWarning}
+					fullWidth
+				>
+					<DialogTitle>
+						Are you sure you want to delete this category?
+					</DialogTitle>
+					<DialogContent>
+						<DialogContentText>
+							Deleting this category will also delete all items as well. Once
+							deleted, you cannot reverse these changes.
+						</DialogContentText>
+						<DialogActions>
+							<Button onClick={() => setOpenWarning(false)} color="primary">
+								Cancel
+							</Button>
+							<Button onClick={handleWarning} color="primary">
+								Delete
+							</Button>
+						</DialogActions>
+					</DialogContent>
+				</Dialog>
 				<ListContent lists={props.category.lists} />
 			</CardContent>
 			<CardActions className={classes.cardActions}>
