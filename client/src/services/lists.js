@@ -11,7 +11,12 @@ const addItem = async newItem => {
 	return request;
 };
 
+const deleteItem = async id => {
+	const request = await axios.post(`${baseUrl}/lists/${id}`);
+	return request;
+};
 export default {
 	getLists,
 	addItem,
+	deleteItem,
 };
