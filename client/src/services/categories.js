@@ -18,8 +18,14 @@ const updateCategory = async (updatedCategory, id) => {
 	);
 	return request;
 };
+
+const deleteCategory = async id => {
+	const request = await axios.delete(`${baseUrl}/categories/${id}`);
+	return request;
+};
 export default {
 	getCategories,
 	addCategory,
 	updateCategory,
+	deleteCategory,
 };
