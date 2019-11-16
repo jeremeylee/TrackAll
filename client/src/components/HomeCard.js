@@ -48,8 +48,7 @@ const HomeCard = props => {
 	const [openMain, setOpenMain] = useState(false);
 	const [openEdit, setOpenEdit] = useState(false);
 	const [openWarning, setOpenWarning] = useState(false);
-	const [deleteCategory, setDeleteCategory] = useState(false);
-	const [editValue, setEditValue] = useState("");
+	const [editValue, setEditValue] = useState(props.category.title);
 	const classes = useStyles();
 	const settings = ["Edit Title", "Delete"];
 
