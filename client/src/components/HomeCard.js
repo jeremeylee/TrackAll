@@ -79,7 +79,7 @@ const HomeCard = props => {
 		<Card className={classes.card}>
 			<CardContent className={classes.cardContent}>
 				<div className={classes.title}>
-					<Typography variant="h5">{props.title}</Typography>
+					<Typography variant="h5">{props.category.title}</Typography>
 					<Button onClick={handleClick}>
 						<MoreHorizIcon />
 					</Button>
@@ -97,11 +97,11 @@ const HomeCard = props => {
 						))}
 					</List>
 				</Dialog>
-				<ListContent lists={props.lists} />
+				<ListContent lists={props.category.lists} />
 			</CardContent>
 			<CardActions className={classes.cardActions}>
 				<Button size="small">
-					<Link to={`/${props.title}`}>View More</Link>
+					<Link to={`/${props.category.title}`}>View More</Link>
 				</Button>
 			</CardActions>
 		</Card>
