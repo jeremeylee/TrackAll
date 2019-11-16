@@ -85,7 +85,17 @@ const HomeCard = props => {
 
 	const handleEdit = event => {
 		event.preventDefault();
-		console.log(editValue);
+
+		const updatedCategory = {
+			...props.category,
+			title: editValue,
+		};
+
+		const updatedCategories = props.categories.map(category =>
+			category.id === props.category.id ? updatedCategory : category
+		);
+
+		console.log(updatedCategories);
 		setEditValue("");
 		setOpenEdit(false);
 	};
