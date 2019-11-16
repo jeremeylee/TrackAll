@@ -8,6 +8,9 @@ import {
 	Typography,
 	Button,
 	Dialog,
+	DialogContent,
+	DialogActions,
+	TextField,
 	List,
 	ListItem,
 	ListItemText,
@@ -40,8 +43,10 @@ const useStyles = makeStyles({
 
 const HomeCard = props => {
 	const [openMain, setOpenMain] = useState(false);
+	const [openEdit, setOpenEdit] = useState(false);
+	const [editValue, setEditValue] = useState("");
 	const classes = useStyles();
-	const settings = ["Edit", "Delete"];
+	const settings = ["Edit Title", "Delete"];
 
 	const handleClick = () => {
 		setOpenMain(true);
@@ -53,8 +58,8 @@ const HomeCard = props => {
 
 	const handleListItemClick = item => {
 		switch (item) {
-			case "Edit":
-				handleEdit();
+			case "Edit Title":
+				handleEditMenuOpen();
 				break;
 			case "Delete":
 				handleDelete();
@@ -65,8 +70,24 @@ const HomeCard = props => {
 		}
 	};
 
-	const handleEdit = () => {
+	const handleEditMenuOpen = () => {
 		setOpenMain(false);
+		setOpenEdit(true);
+	};
+
+	const handleEditMenuClose = () => {
+		setOpenEdit(false);
+	};
+
+	const handleEditValueChange = event => {
+		setEditValue(event.target.value);
+	};
+
+	const handleEdit = event => {
+		event.preventDefault();
+		console.log(editValue);
+		setEditValue("");
+		setOpenEdit(false);
 	};
 
 	const handleDelete = () => {
@@ -96,6 +117,32 @@ const HomeCard = props => {
 						))}
 					</List>
 				</Dialog>
+
+				<Dialog onClose={handleEditMenuClose} open={openEdit} fullWidth>
+					<form autoComplete="off" onSubmit={handleEdit}>
+						<DialogContent>
+							<TextField
+								autoFocus
+								margin="dense"
+								id="edit"
+								value={editValue}
+								onChange={handleEditValueChange}
+								label="Enter a new title"
+								type="edit"
+								fullWidth
+							/>
+							<DialogActions>
+								<Button onClick={handleEditMenuClose} color="primary">
+									Cancel
+								</Button>
+								<Button color="primary" type="submit">
+									Save
+								</Button>
+							</DialogActions>
+						</DialogContent>
+					</form>
+				</Dialog>
+
 				<ListContent lists={props.category.lists} />
 			</CardContent>
 			<CardActions className={classes.cardActions}>
