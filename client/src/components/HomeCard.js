@@ -39,16 +39,16 @@ const useStyles = makeStyles({
 });
 
 const HomeCard = props => {
-	const [open, setOpen] = useState(false);
+	const [openMain, setOpenMain] = useState(false);
 	const classes = useStyles();
 	const settings = ["Edit", "Delete"];
 
 	const handleClick = () => {
-		setOpen(true);
+		setOpenMain(true);
 	};
 
 	const handleClose = () => {
-		setOpen(false);
+		setOpenMain(false);
 	};
 
 	const handleListItemClick = item => {
@@ -60,19 +60,18 @@ const HomeCard = props => {
 				handleDelete();
 				break;
 			default:
-				setOpen(false);
+				setOpenMain(false);
 				break;
 		}
 	};
 
 	const handleEdit = () => {
-		console.log("edit");
-		setOpen(false);
+		setOpenMain(false);
 	};
 
 	const handleDelete = () => {
 		console.log("delete");
-		setOpen(false);
+		setOpenMain(false);
 	};
 
 	return (
@@ -84,7 +83,7 @@ const HomeCard = props => {
 						<MoreHorizIcon />
 					</Button>
 				</div>
-				<Dialog onClose={handleClose} open={open} fullWidth>
+				<Dialog onClose={handleClose} open={openMain} fullWidth>
 					<List>
 						{settings.map(setting => (
 							<ListItem
