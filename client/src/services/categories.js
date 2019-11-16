@@ -11,7 +11,15 @@ const addCategory = async newCategory => {
 	return request;
 };
 
+const updateCategory = async (updatedCategory, id) => {
+	const request = await axios.put(
+		`${baseUrl}/categories/${id}`,
+		updatedCategory
+	);
+	return request;
+};
 export default {
 	getCategories,
 	addCategory,
+	updateCategory,
 };
