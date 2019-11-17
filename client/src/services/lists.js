@@ -12,7 +12,7 @@ const addItem = async newItem => {
 };
 
 const deleteItem = async id => {
-	const request = await axios.post(`${baseUrl}/lists/${id}`);
+	const request = await axios.delete(`${baseUrl}/lists/${id}`);
 	return request;
 };
 export default {
