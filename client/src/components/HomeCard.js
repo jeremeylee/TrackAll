@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import categoryService from "../services/categories";
+import listService from "../services/lists";
 import ListContent from "./ListContent";
 import {
 	Card,
@@ -122,9 +123,13 @@ const HomeCard = props => {
 
 			props.setCategories(updatedCategories);
 			categoryService.deleteCategory(props.category.id);
+			Promise.all(
+				props.category.lists.map(async item => {
+					await listService.deleteItem(item.id);
+				})
+			);
 		}
 	};
-
 	return (
 		<Card className={classes.card}>
 			<CardContent className={classes.cardContent}>
