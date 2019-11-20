@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import listService from "../services/lists";
 import Navigation from "./Navigation";
 import AddDialog from "./AddDialog";
-import ListContent from "./ListContent";
+import AllLists from "./AllLists";
 import BottomNav from "./BottomNav";
 import { Typography, Grid } from "@material-ui/core";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
@@ -77,7 +77,7 @@ const Category = props => {
 				label={"Add a new item"}
 				type={"listItem"}
 			/>
-			<ListContent lists={props.category.lists} />
+			<AllLists lists={props.category.lists} />
 			<BottomNav
 				handleClick={handleOpen}
 				label={"New Item"}
