@@ -39,6 +39,10 @@ const ListContent = props => {
 									style={{ display: list.id !== selectMode ? "none" : "" }}
 								>
 									<EditIcon />
+								</Button>
+								<Button
+									style={{ display: list.id !== selectMode ? "none" : "" }}
+								>
 									<DeleteIcon />
 								</Button>
 							</ListItem>
