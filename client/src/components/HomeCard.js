@@ -123,6 +123,7 @@ const HomeCard = props => {
 
 			props.setCategories(updatedCategories);
 			categoryService.deleteCategory(props.category.id);
+			//Possible problematic
 			Promise.all(
 				props.category.lists.map(async item => {
 					await listService.deleteItem(item.id);
