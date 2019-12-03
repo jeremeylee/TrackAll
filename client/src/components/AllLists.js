@@ -47,14 +47,24 @@ const ListContent = props => {
 		setEditValue(event.target.value);
 	};
 
-	const handleEdit = event => {
+	const handleEdit = async event => {
 		event.preventDefault();
 		setOpenEdit(false);
 
-		//Update the list item with the new value
-		const updatedList = props.lists.map((list, idx) =>
-			idx === index ? { ...list, content: editValue } : list
+		const updatedItem = {
+			content: editValue,
+		};
+
+		const listResponse = await listService.updateItem(
+			updatedItem,
+			props.lists[index].id
 		);
+
+		//Update the list item with the response data
+		const updatedList = props.lists.map((list, idx) =>
+			idx === index ? listResponse.data : list
+		);
+
 		//Update the current category with the new list array
 		const updatedCategory = {
 			...props.category,
@@ -69,7 +79,6 @@ const ListContent = props => {
 		props.setCategories(updatedCategories);
 		props.setLists(updatedList);
 		categoryService.updateCategory(updatedCategory, props.category.id);
-		listService.updateItem(props.lists[index], props.lists[index].id);
 	};
 
 	const handleDelete = () => {
