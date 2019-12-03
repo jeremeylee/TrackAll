@@ -13,7 +13,7 @@ const addCategory = async newCategory => {
 
 const updateCategory = async (updatedCategory, id) => {
 	const request = await axios.put(
-		`${baseUrl}/categories/${id}`,
+		`${baseUrl}/api/categories/${id}`,
 		updatedCategory
 	);
 	return request;
