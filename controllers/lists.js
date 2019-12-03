@@ -44,11 +44,6 @@ listsRouter.delete("/:id", async (req, res, next) => {
 listsRouter.put("/:id", async (req, res, next) => {
 	const { body } = req;
 	try {
-		/* It's possible that during the put request, the list was moved to a new category so get that new category
-       I feel like this could be refactored. In reality it's not possible to edit the content of a list
-       while simultaneously moving the list. Each time a list is moved, a put request is sent to handle
-       this request. This function is checking for both. Is there a better way to do this?
-    */
 		const newCategory = await Category.findById(body.newCategoryId);
 
 		const updatedList = await List.findByIdAndUpdate(
