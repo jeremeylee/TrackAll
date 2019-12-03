@@ -89,8 +89,13 @@ const HomeCard = props => {
 		setEditValue(event.target.value);
 	};
 
-	const handleEdit = event => {
+	const handleEdit = async event => {
 		event.preventDefault();
+
+		const response = await categoryService.updateCategory(
+			{ title: editValue },
+			props.category.id
+		);
 
 		// Update the title of the current list
 		const updatedCategory = {
@@ -104,7 +109,8 @@ const HomeCard = props => {
 		);
 
 		props.setCategories(updatedCategories);
-		categoryService.updateCategory(updatedCategory, props.category.id);
+
+		console.log(response);
 		setEditValue("");
 		setOpenEdit(false);
 	};
