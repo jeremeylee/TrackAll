@@ -77,7 +77,13 @@ const Category = props => {
 				label={"Add a new item"}
 				type={"listItem"}
 			/>
-			<AllLists lists={props.category.lists} />
+			<AllLists
+				setLists={props.setLists}
+				lists={props.category.lists}
+				category={props.category}
+				categories={props.categories}
+				setCategories={props.setCategories}
+			/>
 			<BottomNav
 				handleClick={handleOpen}
 				label={"New Item"}

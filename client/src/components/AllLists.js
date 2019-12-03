@@ -27,13 +27,13 @@ const ListContent = props => {
 	const [openEdit, setOpenEdit] = useState(false);
 	const [editValue, setEditValue] = useState(listContent);
 	const classes = useStyles();
-	console.log(listContent);
 	const handleSelect = (id, idx) => {
 		setSelectMode(id);
 		setIndex(idx);
 	};
 
 	const handleEditMenuOpen = () => {
+		setEditValue(props.lists[index].content);
 		setOpenEdit(true);
 	};
 	const handleEditMenuClose = () => {
@@ -44,8 +44,28 @@ const ListContent = props => {
 		setEditValue(event.target.value);
 	};
 
-	const handleEdit = () => {
-		console.log("edit");
+	const handleEdit = event => {
+		event.preventDefault();
+		setOpenEdit(false);
+
+		//Update the list item with the new value
+		const updatedList = props.lists.map((list, idx) =>
+			idx === index ? { ...list, content: editValue } : list
+		);
+
+		//Update the current category with the new list array
+		const updatedCategory = {
+			...props.category,
+			lists: updatedList,
+		};
+
+		//Update the entire categories array with the updated category
+		const updatedCategories = props.categories.map(category =>
+			category.id === props.category.id ? updatedCategory : category
+		);
+
+		props.setCategories(updatedCategories);
+		props.setLists(updatedList);
 	};
 	return (
 		<List>
@@ -80,7 +100,7 @@ const ListContent = props => {
 							autoFocus
 							margin="dense"
 							id="edit"
-							value={editValue[index]}
+							value={editValue}
 							onChange={handleEditValueChange}
 							label="Edit your item"
 							type="edit"
