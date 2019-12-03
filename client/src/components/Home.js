@@ -30,22 +30,19 @@ const Home = props => {
 		setValue(event.target.value);
 	};
 
-	const handleAdd = event => {
+	const handleAdd = async event => {
 		event.preventDefault();
-		console.log(props.categories);
 
 		// Add new category to category array
 		const newCategory = {
-			id: randomID(),
-			lists: [],
 			title: value,
 		};
 
 		// Send new category as obj for POST request
-		categoryService.addCategory(newCategory);
-
+		const response = await categoryService.addCategory(newCategory);
 		// Update the existing array of categories
-		const updatedCategory = [...props.categories, newCategory];
+		const updatedCategory = [...props.categories, response.data];
+		console.log(updatedCategory);
 		props.setCategories(updatedCategory);
 		setValue("");
 		setOpen(false);
