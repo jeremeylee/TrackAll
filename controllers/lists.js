@@ -50,7 +50,6 @@ listsRouter.put("/:id", async (req, res, next) => {
 			req.params.id,
 			{
 				content: body.content,
-				category: newCategory._id,
 			},
 			{ new: true }
 		);
