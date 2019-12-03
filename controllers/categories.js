@@ -2,7 +2,7 @@ const categoriesRouter = require("express").Router();
 const Category = require("../models/category");
 
 categoriesRouter.get("/", async (req, res) => {
-	const allCategories = await Category.find({});
+	const allCategories = await Category.find({}).populate("lists");
 	res.json(allCategories.map(category => category.toJSON()));
 });
 
