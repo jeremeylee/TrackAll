@@ -38,7 +38,7 @@ const Category = props => {
 
 		// Create new item object
 		const newItem = {
-			category: props.category.id,
+			// category: props.category.id,
 			id: randomID(),
 			content: value,
 		};
