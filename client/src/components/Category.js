@@ -41,14 +41,14 @@ const Category = props => {
 			categoryId: props.category.id,
 			content: value,
 		};
-		const test = await listService.addItem(newItem);
+		const response = await listService.addItem(newItem);
 
 		// Update current list of items with new item
-		const updatedList = [...props.allLists, newItem];
+		const updatedList = [...props.allLists, response.data];
 		props.setLists(updatedList);
-
+		console.log(updatedList);
 		// Update the category's list array
-		props.category.lists = props.category.lists.concat(newItem);
+		props.category.lists = props.category.lists.concat(response.data);
 
 		setValue("");
 		setOpen(false);
