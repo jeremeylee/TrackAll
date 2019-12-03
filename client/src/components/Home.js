@@ -54,6 +54,7 @@ const Home = props => {
 		<div>
 			<Navigation
 				handleClick={handleOpen}
+				tooltip="New Category"
 				toolBarContent={<Typography variant="h6">Track All</Typography>}
 			/>
 			<Grid container spacing={0}>

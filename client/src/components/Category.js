@@ -57,6 +57,7 @@ const Category = props => {
 	return (
 		<div>
 			<Navigation
+				tooltip="New Item"
 				handleClick={handleOpen}
 				toolBarContent={
 					<Grid container>

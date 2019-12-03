@@ -2,7 +2,8 @@ import React from "react";
 import {
 	AppBar,
 	Toolbar,
-	Button,
+	IconButton,
+	Tooltip,
 	makeStyles,
 	useMediaQuery,
 } from "@material-ui/core";
@@ -24,13 +25,15 @@ const Navigation = props => {
 		<AppBar position="sticky">
 			<Toolbar className={classes.root}>
 				{props.toolBarContent}
-				<Button
-					color="inherit"
-					style={{ display: matches ? "" : "none" }}
-					onClick={props.handleClick}
-				>
-					<AddBoxIcon />
-				</Button>
+				<Tooltip title={props.tooltip}>
+					<IconButton
+						color="inherit"
+						style={{ display: matches ? "" : "none" }}
+						onClick={props.handleClick}
+					>
+						<AddBoxIcon />
+					</IconButton>
+				</Tooltip>
 			</Toolbar>
 		</AppBar>
 	);
