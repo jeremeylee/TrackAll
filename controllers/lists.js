@@ -17,7 +17,7 @@ listsRouter.post("/", async (req, res, next) => {
 
 		const newList = new List({
 			content: body.content,
-			category: category._id, // Add a ref to the objectId of the category the list is being added to
+			// category: category._id, // Add a ref to the objectId of the category the list is being added to
 		});
 
 		const savedList = await newList.save();
