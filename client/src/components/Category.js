@@ -33,16 +33,15 @@ const Category = props => {
 		setValue(event.target.value);
 	};
 
-	const handleAdd = event => {
+	const handleAdd = async event => {
 		event.preventDefault();
 
 		// Create new item object
 		const newItem = {
-			// category: props.category.id,
-			id: randomID(),
+			categoryId: props.category.id,
 			content: value,
 		};
-		listService.addItem(newItem);
+		const test = await listService.addItem(newItem);
 
 		// Update current list of items with new item
 		const updatedList = [...props.allLists, newItem];
