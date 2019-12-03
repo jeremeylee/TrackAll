@@ -40,9 +40,10 @@ const Home = props => {
 
 		// Send new category as obj for POST request
 		const response = await categoryService.addCategory(newCategory);
+
 		// Update the existing array of categories
 		const updatedCategory = [...props.categories, response.data];
-		console.log(updatedCategory);
+
 		props.setCategories(updatedCategory);
 		setValue("");
 		setOpen(false);
