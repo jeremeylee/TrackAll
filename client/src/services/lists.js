@@ -11,6 +11,11 @@ const addItem = async newItem => {
 	return request;
 };
 
+const updateItem = async (updatedItem, id) => {
+	const request = await axios.put(`${baseUrl}/lists/${id}`, updatedItem);
+	return request;
+};
+
 const deleteItem = async id => {
 	const request = await axios.delete(`${baseUrl}/lists/${id}`);
 	return request;
@@ -18,5 +23,6 @@ const deleteItem = async id => {
 export default {
 	getLists,
 	addItem,
+	updateItem,
 	deleteItem,
 };
