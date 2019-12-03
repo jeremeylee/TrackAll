@@ -92,25 +92,22 @@ const HomeCard = props => {
 	const handleEdit = async event => {
 		event.preventDefault();
 
-		const response = await categoryService.updateCategory(
-			{ title: editValue },
-			props.category.id
-		);
-
-		// Update the title of the current list
 		const updatedCategory = {
-			...props.category,
 			title: editValue,
 		};
+		// Update the title of the current list
+		const response = await categoryService.updateCategory(
+			updatedCategory,
+			props.category.id
+		);
+		console.log(response.data);
 
-		// Repopulate the categories list but use the updatedCategory for the category in the list that has the same id
+		// Repopulate the categories list but use the response from the PUT request to update the current category
 		const updatedCategories = props.categories.map(category =>
-			category.id === props.category.id ? updatedCategory : category
+			category.id === props.category.id ? response.data : category
 		);
 
 		props.setCategories(updatedCategories);
-
-		console.log(response);
 		setEditValue("");
 		setOpenEdit(false);
 	};
