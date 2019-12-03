@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import listService from "../services/lists";
+import categoryService from "../services/categories";
 import {
 	List,
 	ListItem,
@@ -66,6 +68,8 @@ const ListContent = props => {
 
 		props.setCategories(updatedCategories);
 		props.setLists(updatedList);
+		categoryService.updateCategory(updatedCategory, props.category.id);
+		listService.updateItem(editValue, props.lists[index].id);
 	};
 
 	const handleDelete = () => {
