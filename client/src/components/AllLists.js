@@ -88,6 +88,8 @@ const ListContent = props => {
 		);
 		props.setCategories(updatedCategories);
 		props.setLists(deleteList);
+		categoryService.updateCategory(updatedCategory, props.category.id);
+		listService.deleteItem(selectMode);
 	};
 	return (
 		<List>
