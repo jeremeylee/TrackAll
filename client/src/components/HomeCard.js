@@ -100,7 +100,6 @@ const HomeCard = props => {
 			updatedCategory,
 			props.category.id
 		);
-		console.log(response.data);
 
 		// Repopulate the categories list but use the response from the PUT request to update the current category
 		const updatedCategories = props.categories.map(category =>
