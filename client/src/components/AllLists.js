@@ -55,7 +55,6 @@ const ListContent = props => {
 		const updatedList = props.lists.map((list, idx) =>
 			idx === index ? { ...list, content: editValue } : list
 		);
-
 		//Update the current category with the new list array
 		const updatedCategory = {
 			...props.category,
@@ -70,7 +69,7 @@ const ListContent = props => {
 		props.setCategories(updatedCategories);
 		props.setLists(updatedList);
 		categoryService.updateCategory(updatedCategory, props.category.id);
-		listService.updateItem(editValue, props.lists[index].id);
+		listService.updateItem(props.lists[index], props.lists[index].id);
 	};
 
 	const handleDelete = () => {
