@@ -5,6 +5,7 @@ import {
 	List,
 	ListItem,
 	ListItemText,
+	IconButton,
 	Button,
 	Dialog,
 	DialogContent,
@@ -102,18 +103,18 @@ const ListContent = props => {
 									onClick={() => handleSelect(list.id, index)}
 									primary={list.content}
 								/>
-								<Button
+								<IconButton
 									onClick={handleEditMenuOpen}
 									style={{ display: list.id !== selectMode ? "none" : "" }}
 								>
 									<EditIcon />
-								</Button>
-								<Button
+								</IconButton>
+								<IconButton
 									onClick={handleDelete}
 									style={{ display: list.id !== selectMode ? "none" : "" }}
 								>
 									<DeleteIcon />
-								</Button>
+								</IconButton>
 							</ListItem>
 						</div>
 				  ))}
