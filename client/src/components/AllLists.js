@@ -67,6 +67,24 @@ const ListContent = props => {
 		props.setCategories(updatedCategories);
 		props.setLists(updatedList);
 	};
+
+	const handleDelete = () => {
+		//Create a new list array without the deleted list item
+		const deleteList = props.lists.filter((list, idx) => idx !== index);
+
+		//Update the current category with the new list array
+		const updatedCategory = {
+			...props.category,
+			lists: deleteList,
+		};
+
+		//Update the entire categories array with the updated category
+		const updatedCategories = props.categories.map(category =>
+			category.id === props.category.id ? updatedCategory : category
+		);
+		props.setCategories(updatedCategories);
+		props.setLists(deleteList);
+	};
 	return (
 		<List>
 			{props.lists === undefined
@@ -85,6 +103,7 @@ const ListContent = props => {
 									<EditIcon />
 								</Button>
 								<Button
+									onClick={handleDelete}
 									style={{ display: list.id !== selectMode ? "none" : "" }}
 								>
 									<DeleteIcon />
