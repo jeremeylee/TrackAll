@@ -2,7 +2,9 @@ const categoriesRouter = require("express").Router();
 const Category = require("../models/category");
 
 categoriesRouter.get("/", async (req, res) => {
-	const allCategories = await Category.find({}).populate("lists");
+	const allCategories = await Category.find({}).populate("lists", {
+		content: 1,
+	});
 	res.json(allCategories.map(category => category.toJSON()));
 });
 
@@ -38,7 +40,7 @@ categoriesRouter.put("/:id", async (req, res, next) => {
 				title: body.title,
 			},
 			{ new: true }
-		);
+		).populate("lists");
 		res.status(201).json(updatedCategory.toJSON());
 	} catch (exception) {
 		next(exception);
