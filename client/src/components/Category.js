@@ -57,6 +57,7 @@ const Category = props => {
 	return (
 		<div>
 			<Navigation
+				handleClick={handleOpen}
 				toolBarContent={
 					<Grid container>
 						<Link to="/">

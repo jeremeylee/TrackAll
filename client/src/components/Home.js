@@ -53,6 +53,7 @@ const Home = props => {
 	return (
 		<div>
 			<Navigation
+				handleClick={handleOpen}
 				toolBarContent={<Typography variant="h6">Track All</Typography>}
 			/>
 			<Grid container spacing={0}>

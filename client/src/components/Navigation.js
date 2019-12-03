@@ -24,7 +24,11 @@ const Navigation = props => {
 		<AppBar position="sticky">
 			<Toolbar className={classes.root}>
 				{props.toolBarContent}
-				<Button color="inherit" style={{ display: matches ? "" : "none" }}>
+				<Button
+					color="inherit"
+					style={{ display: matches ? "" : "none" }}
+					onClick={props.handleClick}
+				>
 					<AddBoxIcon />
 				</Button>
 			</Toolbar>
