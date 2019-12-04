@@ -1,26 +1,23 @@
 import axios from "axios";
-const baseUrl = "http://localhost:3001";
+const baseUrl = "/api/categories";
 
 const getCategories = () => {
-	const request = axios.get(`${baseUrl}/api/categories`);
+	const request = axios.get(`${baseUrl}`);
 	return request.then(response => response.data);
 };
 
 const addCategory = async newCategory => {
-	const request = await axios.post(`${baseUrl}/api/categories`, newCategory);
+	const request = await axios.post(`${baseUrl}`, newCategory);
 	return request;
 };
 
 const updateCategory = async (updatedCategory, id) => {
-	const request = await axios.put(
-		`${baseUrl}/api/categories/${id}`,
-		updatedCategory
-	);
+	const request = await axios.put(`${baseUrl}/${id}`, updatedCategory);
 	return request;
 };
 
 const deleteCategory = async id => {
-	const request = await axios.delete(`${baseUrl}/api/categories/${id}`);
+	const request = await axios.delete(`${baseUrl}/${id}`);
 	return request;
 };
 export default {
