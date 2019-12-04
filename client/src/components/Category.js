@@ -46,7 +46,7 @@ const Category = props => {
 		// Update current list of items with new item
 		const updatedList = [...props.allLists, response.data];
 		props.setLists(updatedList);
-		console.log(updatedList);
+
 		// Update the category's list array
 		props.category.lists = props.category.lists.concat(response.data);
 
