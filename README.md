@@ -1,13 +1,15 @@
 ## Track All
 
-[Track All](http://trackall.us-east-2.elasticbeanstalk.com/)
+#### CHhck out the app: [Track All](http://trackall.us-east-2.elasticbeanstalk.com/)
 
 A general, all purpose list tracker web application. Track All allows you to create different categories and you're able to add new items to each category. I like tracking things such as shows I've watched, movies I've watched, current favorites in music, etc. Therefore, I decided to develop a full stack web application that allows me to create a list of anything and categorize it.
 
 **Desktop Version:**
+
 ![Desktop Demo](/Demo/Desktop_Demo.gif)
 
 **Mobile Version:**
+
 ![Mobile Demo](/Demo/Mobile_Demo.gif)
 
 This app is a potential precursor/replacement for the Flow app that I was developing.
@@ -24,9 +26,11 @@ This app is a potential precursor/replacement for the Flow app that I was develo
 Below is an example of the delete/edit features of the app
 
 **Desktop Version:**
+
 ![Desktop Features](/Demo/Desktop_Features.gif)
 
 **Mobile Version:**
+
 ![Mobile Features](/Demo/Mobile_Features.gif)
 
 ## Front End
