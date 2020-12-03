@@ -1,6 +1,6 @@
 ## Track All
 
-### Check out the app: [Track All](http://trackall.us-east-2.elasticbeanstalk.com/)
+### Check out the app: [Track All](http://trackall.us-east-2.elasticbeanstalk.com/) (Currently taken down)
 
 A general, all purpose list tracker web application. Track All allows you to create different categories and you're able to add new items to each category. I like tracking things such as shows I've watched, movies I've watched, current favorites in music, etc. Therefore, I decided to develop a full stack web application that allows me to create a list of anything and categorize it.
 
